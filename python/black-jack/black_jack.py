@@ -66,11 +66,17 @@ def is_blackjack(card_one, card_two):
     :return: bool - is the hand is a blackjack (two cards worth 21).
 
     1.  'J', 'Q', or 'K' (otherwise known as "face cards") = 10
-    2.  'A' (ace card) = 11 (if already in hand)
+    2.  'A' (ace card) =  11 (if already in hand)
     3.  '2' - '10' = numerical value.
     """
 
-    pass
+    if card_one == 'A' and value_of_card(card_two) == 10:
+        return True
+    if card_two == 'A' and value_of_card(card_one) == 10:
+        return True
+    if value_of_card(card_one) + value_of_card(card_two) == 21:
+        return True
+    return False
 
 
 def can_split_pairs(card_one, card_two):
