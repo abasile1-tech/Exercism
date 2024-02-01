@@ -1,5 +1,5 @@
-using Xunit;
 using Exercism.Tests;
+using Xunit;
 
 public class RollTheDieTests
 {
@@ -20,6 +20,7 @@ public class RollTheDieTests
     {
         var player = new Player();
         var strength = player.GenerateSpellStrength();
-        Assert.InRange(strength, 0.0, 100.0);
+        for (var i = 0; i < 100; i++) { Assert.InRange(strength, 0.0, 100.0); }
+
     }
 }
