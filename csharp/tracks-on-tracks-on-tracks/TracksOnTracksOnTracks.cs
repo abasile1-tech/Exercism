@@ -1,50 +1,66 @@
-using System;
 using System.Collections.Generic;
 
 public static class Languages
 {
     public static List<string> NewList()
     {
-        throw new NotImplementedException("Please implement the static Languages.NewList() method");
+        return new List<string>();
     }
 
     public static List<string> GetExistingLanguages()
     {
-        throw new NotImplementedException("Please implement the static Languages.GetExistingLanguages() method");
+        return new List<string> { "C#", "Clojure", "Elm" };
     }
 
     public static List<string> AddLanguage(List<string> languages, string language)
     {
-        throw new NotImplementedException("Please implement the static Languages.AddLanguage() method");
+        languages.Add(language);
+        return languages;
     }
 
     public static int CountLanguages(List<string> languages)
     {
-        throw new NotImplementedException("Please implement the static Languages.CountLanguages() method");
+        return languages.Count;
     }
 
     public static bool HasLanguage(List<string> languages, string language)
     {
-        throw new NotImplementedException("Please implement the static Languages.HasLanguage() method");
+        return languages.Contains(language);
     }
 
     public static List<string> ReverseList(List<string> languages)
     {
-        throw new NotImplementedException("Please implement the static Languages.ReverseList() method");
+        languages.Reverse();
+        return languages;
     }
 
     public static bool IsExciting(List<string> languages)
     {
-        throw new NotImplementedException("Please implement the static Languages.IsExciting() method");
+        if (languages.Count > 0 && (languages[0] == "C#" || (languages[1] == "C#" && (languages.Count == 2 || languages.Count == 3))))
+        {
+            return true;
+        }
+        return false;
     }
 
     public static List<string> RemoveLanguage(List<string> languages, string language)
     {
-        throw new NotImplementedException("Please implement the static Languages.RemoveLanguage() method");
+        languages.Remove(language);
+        return languages;
     }
 
     public static bool IsUnique(List<string> languages)
     {
-        throw new NotImplementedException("Please implement the static Languages.IsUnique() method");
+        Dictionary<string, int> tracker = new Dictionary<string, int>();
+        foreach (string language in languages)
+        {
+            if (!tracker.ContainsKey(language))
+            {
+                tracker.Add(language, 1);
+                continue;
+            }
+            return false;
+        }
+        return true;
     }
 }
